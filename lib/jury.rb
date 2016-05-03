@@ -19,4 +19,8 @@ class Jury
     end
     votes
   end
+
+  def report_votes(votes)
+    votes.each { |vote| puts "vote: #{vote}" }
+  end
 end
