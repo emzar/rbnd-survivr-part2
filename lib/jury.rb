@@ -11,8 +11,12 @@ class Jury
 
   def cast_votes(finalists)
     votes = {}
-    @members.each { |_member| puts "0" }
-    finalists.each_with_index { |finalist, index| votes.merge!(finalist => index * 7) }
+    finalists.each { |finalist| votes.merge!(finalist => 0) }
+    @members.each_with_index do |member, index|
+      winner = finalists.shuffle(random: Random.new(index))[1]
+      votes[winner] += 1
+      puts "#{member}: #{winner.name}"
+    end
     votes
   end
 end
