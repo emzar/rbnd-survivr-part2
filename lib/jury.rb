@@ -1,5 +1,5 @@
 class Jury
-  attr_reader :members
+  attr_accessor :members
 
   def initialize
     @members = []
@@ -10,6 +10,8 @@ class Jury
   end
 
   def cast_votes(finalists)
-    {}
+    votes = {}
+    finalists.each { |finalist| votes.merge!(finalist => 0) }
+    votes
   end
 end
