@@ -8,4 +8,8 @@ class Jury
   def add_member(member)
     @members << member
   end
+
+  def cast_votes(finalists)
+    {}
+  end
 end
