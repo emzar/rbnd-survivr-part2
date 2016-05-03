@@ -42,13 +42,13 @@ class TestJury < Minitest::Test
     assert_equal 7, output
   end
 
-  # def test_cast_votes_total_votes_equals_seven
-  #   total_votes = 0
-  #   @jury.members = @jury_members
-  #   @jury.cast_votes(@finalists).each {|k,v| total_votes += v}
-  #   assert_equal 7, total_votes
-  # end
-  #
+  def test_cast_votes_total_votes_equals_seven
+    total_votes = 0
+    @jury.members = @jury_members
+    @jury.cast_votes(@finalists).each {|k,v| total_votes += v}
+    assert_equal 7, total_votes
+  end
+
   # def test_cast_votes_voting_seems_random
   #   #not an actual test, but make sure the votes each jury member casts is random. hint: TestContestant has a method that will randomly select an item from an array.
   # end
