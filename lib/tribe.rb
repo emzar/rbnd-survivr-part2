@@ -1,5 +1,5 @@
 class Tribe
-  attr_reader :name
+  attr_reader :name, :members
 
   def initialize(options)
   end
