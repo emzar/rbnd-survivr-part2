@@ -8,4 +8,8 @@ class Game
   def add_tribe(tribe)
     @tribes << tribe
   end
+
+  def immunity_challenge
+    tribes.first
+  end
 end
