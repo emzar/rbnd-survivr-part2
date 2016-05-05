@@ -4,4 +4,8 @@ class Game
   def initialize(tribe1, tribe2)
     @tribes = [tribe1, tribe2]
   end
+
+  def add_tribe(tribe)
+    @tribes << tribe
+  end
 end
