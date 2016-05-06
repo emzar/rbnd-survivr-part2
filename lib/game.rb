@@ -12,4 +12,8 @@ class Game
   def immunity_challenge
     tribes.first
   end
+
+  def clear_tribes
+    @tribes.clear
+  end
 end
