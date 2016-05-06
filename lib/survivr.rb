@@ -19,10 +19,17 @@ require_relative "jury"
 @borneo = Game.new(@coyopa, @hunapu)
 #=========================================================
 
+def stars
+  '*'.yellow * 10
+end
+
+def phase(phase)
+  stars + "Phase #{phase}".pink + stars
+end
 
 #This is where you will write your code for the three phases
 def phase_one
-  puts "\nPhase One".pink
+  puts phase("One")
   losers = []
   8.times do
     loser_tribe = @borneo.immunity_challenge
@@ -33,7 +40,7 @@ def phase_one
 end
 
 def phase_two
-  puts "\nPhase Two".pink
+  puts phase("Two")
   immunes = []
   3.times do
     immunes << @borneo.individual_immunity_challenge
@@ -42,7 +49,7 @@ def phase_two
 end
 
 def phase_three
-  puts "\nPhase Three".pink
+  puts phase("Three")
   7.times do
     @jury.add_member(@borneo.individual_immunity_challenge)
   end

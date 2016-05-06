@@ -6,9 +6,8 @@ class Tribe
   def initialize(options = {})
     @name = options[:name].capitalize
     @members = options[:members]
-    puts "\nNew tribe called #{name.yellow} is created:"
-    @members.each { |member| print "#{member} " }
-    puts
+    puts "New tribe called #{name.yellow} is created: #{members.join(' ')}"
+    #puts
   end
 
   def to_s
