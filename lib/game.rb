@@ -28,6 +28,5 @@ class Game
     tribe = @tribes.first
     immune = tribe.members.shuffle(random: Random.new).first
     tribe.tribal_council(immune: immune)
-    immune
   end
 end
