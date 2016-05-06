@@ -1,10 +1,14 @@
+require 'colorizr'
+
 class Tribe
   attr_reader :name, :members
 
   def initialize(options = {})
-    puts options[:name].capitalize
     @name = options[:name].capitalize
     @members = options[:members]
+    puts "\nNew tribe called #{name.yellow} is created:"
+    @members.each { |member| print "#{member} " }
+    puts
   end
 
   def to_s
@@ -13,11 +17,11 @@ class Tribe
 
   def tribal_council(options = {})
     immune = options[:immune]
-    puts "#{immune.name} is immune from being eliminated from #{name}" if immune
+    puts "#{immune.name.green} is immune from being eliminated from #{name.yellow}" if immune
     victims = members.clone
     victims.delete(immune)
     loser = victims.shuffle!(random: Random.new).first
-    puts "#{loser.name} was eliminated from #{name}"
+    puts "#{loser.name.red} was eliminated from #{name.yellow}"
     @members.delete(loser)
   end
 end
