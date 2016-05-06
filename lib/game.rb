@@ -18,6 +18,11 @@ class Game
   end
 
   def merge(tribe_name)
-    Tribe.new({ name: tribe_name, members: @tribes[0].members + @tribes[1].members })
+    @merged_tribe = Tribe.new({ name: tribe_name, members: @tribes[0].members + @tribes[1].members })
+    @merged_tribe
+  end
+
+  def individual_immunity_challenge
+    @tribes.first.members.shuffle(random: Random.new(@tribes.first.members.length)).first
   end
 end
