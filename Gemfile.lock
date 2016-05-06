@@ -1,0 +1,18 @@
+GIT
+  remote: git@github.com:emzar/colorizr.git
+  revision: 5711e4d98f18e802ac96b453d7e6e80ee6c31648
+  specs:
+    colorizr (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colorizr!
+
+BUNDLED WITH
+   1.12.2
