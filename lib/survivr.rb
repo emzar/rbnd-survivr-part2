@@ -25,13 +25,16 @@ def phase_one
     loser_tribe = @borneo.immunity_challenge
     loser = loser_tribe.tribal_council
     losers << loser
-    puts "#{loser.name} was eliminated from #{loser_tribe.name}"
   end
   losers.length
 end
 
 def phase_two
-  3
+  immunes = []
+  3.times do
+    immunes << @borneo.individual_immunity_challenge
+  end
+  immunes.length
 end
 
 def phase_three
