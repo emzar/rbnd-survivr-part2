@@ -11,9 +11,13 @@ class Tribe
     @name
   end
 
-  def tribal_council(immune)
+  def tribal_council(options = {})
+    immune = options[:immune]
     victims = members
     victims.delete(immune)
-    victims.shuffle(random: Random.new(members.length)).first
+    loser = victims.shuffle!(random: Random.new).shift
+    @members = victims
+    @members.push(immune) if immune
+    loser
   end
 end
