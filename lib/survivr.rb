@@ -22,7 +22,7 @@ require_relative "jury"
 
 #This is where you will write your code for the three phases
 def phase_one
-  puts "\nPhase One".blue
+  puts "\nPhase One".pink
   losers = []
   8.times do
     loser_tribe = @borneo.immunity_challenge
@@ -33,7 +33,7 @@ def phase_one
 end
 
 def phase_two
-  puts "\nPhase Two".blue
+  puts "\nPhase Two".pink
   immunes = []
   3.times do
     immunes << @borneo.individual_immunity_challenge
@@ -42,7 +42,7 @@ def phase_two
 end
 
 def phase_three
-  puts "\nPhase Three".blue
+  puts "\nPhase Three".pink
   7.times do
     @jury.add_member(@borneo.individual_immunity_challenge)
   end

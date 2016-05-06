@@ -1,3 +1,5 @@
+require 'colorizr'
+
 class Jury
   attr_accessor :members
 
@@ -14,13 +16,13 @@ class Jury
     @members.each_with_index do |member, index|
       winner = finalists.shuffle(random: Random.new)[1]
       votes[winner] += 1
-      puts "#{member}: #{winner.name}"
+      puts "#{member.name.blue}: #{winner.name}"
     end
     votes
   end
 
   def report_votes(votes)
-    votes.each { |vote| puts "vote: #{vote}" }
+    votes.each { |member, votes| puts "#{member} has #{votes} votes" }
   end
 
   def announce_winner(votes)
