@@ -38,7 +38,10 @@ def phase_two
 end
 
 def phase_three
-  7
+  7.times do
+    @jury.add_member(@borneo.individual_immunity_challenge)
+  end
+  @jury.members.length
 end
 
 
