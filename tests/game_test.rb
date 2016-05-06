@@ -36,10 +36,10 @@ class TestGame < Minitest::Test
     assert_empty @borneo.clear_tribes
   end
 
-  # def test_merge_returns_new_tribe
-  #   assert_instance_of Tribe, @borneo.merge("combined_tribe")
-  # end
-  #
+  def test_merge_returns_new_tribe
+    assert_instance_of Tribe, @borneo.merge("combined_tribe")
+  end
+
   # def test_merge_includes_one_of_first_tribe
   #   included = []
   #   new_tribe = @borneo.merge("combined_tribe")

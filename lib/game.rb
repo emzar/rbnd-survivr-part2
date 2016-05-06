@@ -16,4 +16,8 @@ class Game
   def clear_tribes
     @tribes.clear
   end
+
+  def merge(tribe_name)
+    Tribe.new({ name: tribe_name, members: @tribes[0].members + @tribes[1].members })
+  end
 end
